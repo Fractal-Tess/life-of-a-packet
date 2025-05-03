@@ -1,21 +1,19 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Section from "../../components/Section.astro";
-import { type CollectionEntry, getCollection } from "astro:content";
-import { render } from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../components/Section.astro';
+import Driver from '../../components/svelte/Driver.svelte';
+import { type CollectionEntry, getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const posts = await getCollection('posts');
   return posts.map((post) => ({
     params: { slug: post.id },
     props: post,
   }));
 }
 
-type Props = CollectionEntry<"posts">;
+type Props = CollectionEntry<'posts'>;
 const post = Astro.props;
-
-const { Content } = await render(post);
 ---
 
 <Layout
@@ -23,7 +21,16 @@ const { Content } = await render(post);
   siteDescription={Astro.props.data.description}
   headerCosmeticText="POST"
 >
-  <Section class="prose-lg p-8">
-    <Content />
+  <Section class="prose-xl min-h-svh relative max-w-3xl mx-auto pt-12 pb-24">
+    <Driver content={post.body} client:load />
   </Section>
 </Layout>
+
+<style is:global>
+  img {
+    max-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+</style>

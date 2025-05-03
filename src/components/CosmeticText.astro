@@ -1,14 +1,38 @@
 ---
 interface Props {
   text: string;
-  vertical?: boolean;
+  mobileVertical?: boolean;
+  desktopVertical?: boolean;
+  class?: string;
 }
 
-const { text, vertical = false } = Astro.props;
+const {
+  text,
+  mobileVertical = false,
+  desktopVertical = false,
+  class: className = '',
+} = Astro.props;
 ---
 
-<span style={vertical ? "writing-mode: vertical-lr;" : ""}
+<span
   class="text-edge block px-2 text-xl font-semibold tracking-[0.3em]"
+  class:list={[
+    mobileVertical && 'mobile-vertical',
+    desktopVertical && 'desktop-vertical',
+    className,
+  ]}
 >
   {text}
 </span>
+
+<style>
+  .mobile-vertical {
+    writing-mode: vertical-lr;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-vertical {
+      writing-mode: vertical-lr;
+    }
+  }
+</style>

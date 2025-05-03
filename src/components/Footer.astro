@@ -3,11 +3,11 @@ import Section from "./Section.astro";
 import Arrow from "../components/Arrow.astro";
 
 import { userSocials, userEmail } from "../data/user-contact.json";
-import { userName } from "../data/user-personal.json";
+import { heading } from "../data/landing.json";
 ---
 
 <Section class="flex flex-row p-2">
-  <a class="my-auto hover:brightness-125" href="/"><h1>{userName}</h1></a>
+  <a class="my-auto hover:brightness-125" href="/"><h1>{heading}</h1></a>
 
   <!-- USER CONTACT -->
   <div class="hidden ml-auto md:flex md:flex-col">

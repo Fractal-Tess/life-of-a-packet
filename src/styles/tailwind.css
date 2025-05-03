@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-@import "tailwindcss";
-@import "tailwindcss/preflight.css" layer(base);
+@import 'tailwindcss';
 
 @plugin "@tailwindcss/typography";
+@source '../**/*.{astro,svelte}';
 
 @theme {
   /* COLOR */
@@ -20,11 +20,19 @@
   /* OTHER */
   --radius-interactive: 0.4rem;
   --duration-interactive: 200ms;
+
+  /* ANIMATIONS */
+  --animation-spin-slow: spin 5s linear infinite;
+  --animation-gradient-rotate: gradient-rotate 3s linear infinite;
 }
 
 @layer base {
   :root {
     color: var(--color-primary-foreground);
     font-family: var(--font-primary);
+  }
+
+  .dev {
+    @apply border-2 border-red-500;
   }
 }
