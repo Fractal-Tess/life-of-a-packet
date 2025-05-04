@@ -14,9 +14,7 @@ export class Driver {
 
   constructor(content: string) {
     this.content = content;
-    // Initialize sections as empty array
     this.sections = [];
-    // Parse sections asynchronously
 
     console.log('Driver sections', this.sections);
     this.initializeSections(content);

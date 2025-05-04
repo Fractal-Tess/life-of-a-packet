@@ -1,8 +1,7 @@
 ---
 import "../styles/tailwind.css";
-import { siteTitle } from "../data/site.json";
 import { ClientRouter } from "astro:transitions";
-
+import { title } from "../data/landing.json";
 interface Props {
   pageTitle: string;
   pageDescription: string;
@@ -26,7 +25,7 @@ const {
 <link
   rel="alternate"
   type="application/rss+xml"
-  title={siteTitle}
+  title={title}
   href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />

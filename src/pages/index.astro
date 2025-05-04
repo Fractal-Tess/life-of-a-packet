@@ -1,17 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
-import Posts from '../components/svelte/Posts.svelte';
+import Posts from '../components/Posts.astro';
 import CosmeticText from '../components/CosmeticText.astro';
 
-import { siteTitle, SiteDescription } from '../data/site.json';
-import { heading } from '../data/landing.json';
 import { getCollection } from 'astro:content';
 
 import Arrow from '../components/Arrow.astro';
 
 import { userSocials, userEmail } from '../data/user-contact.json';
-
+import { title, author, heroAside, description } from '../data/landing.json';
 interface Props {
   cosmeticText?: string;
 }
@@ -24,19 +22,15 @@ const heroTags: Set<string> = new Set(
   allPosts.flatMap((post) => post.data.tags)
 );
 
-const cosmeticTexts: { [section: string]: string } = {
-  header: 'Vilian Gerdzhikov',
-  hero: 'It travels far and wide',
-};
+
 ---
 
 <Layout
-  siteTitle={siteTitle}
-  siteDescription={SiteDescription}
-  headerCosmeticText={cosmeticTexts.header}
+  siteTitle={title}
+  siteDescription={description}
 >
   <Section class="flex justify-between max-h-72 md:min-h-64">
-    <CosmeticText text={cosmeticTexts.header} desktopVertical />
+    <CosmeticText text={author} desktopVertical />
     <CosmeticText
       class="md:mt-auto text-nowrap"
       text={new Date()
@@ -47,7 +41,7 @@ const cosmeticTexts: { [section: string]: string } = {
 
   <Section class="flex flex-row p-2">
     <a class="hover:brightness-125" href="/">
-      <h1 class="text-4xl sm:text-5xl">{heading}</h1>
+      <h1 class="text-4xl sm:text-5xl">{title}</h1>
     </a>
 
     <div class="hidden ml-auto gap-4 md:gap-0 md:flex md:flex-col">
@@ -73,11 +67,10 @@ const cosmeticTexts: { [section: string]: string } = {
     class="relative flex bg-radial-[at_50%_10%] from-accent/10 to-transparent"
   >
     <span class="text-4xl italic m-auto text-center">Want to get started?</span>
-    <CosmeticText text={cosmeticTexts.hero} desktopVertical mobileVertical />
+    <CosmeticText text={heroAside} desktopVertical mobileVertical />
   </Section>
 
-  <!-- POSTS -->
   <Section>
-    <Posts client:load allPosts={allPosts} />
+    <Posts allPosts={allPosts} />
   </Section>
 </Layout>
