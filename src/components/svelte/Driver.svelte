@@ -1,19 +1,17 @@
 <script lang="ts">
   import { Driver, setDriver } from './driver.svelte';
-  import ContinueButton from './ContinueButton.svelte';
-  import Renderer from './Renderer.svelte';
   import Progress from './Progress.svelte';
 
   interface Props {
     content: string;
   }
 
-  const { content }: Props = $props();
+  const {}: Props = $props();
 
-  const driver = new Driver(content);
+  const driver = new Driver();
   setDriver(driver);
 </script>
 
 <Progress />
-<Renderer />
-<ContinueButton />
+<!-- <Renderer /> -->
+<!-- <ContinueButton /> -->

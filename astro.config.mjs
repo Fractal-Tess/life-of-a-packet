@@ -15,6 +15,7 @@ export default defineConfig({
   },
 
   integrations: [svelte(), mdx(), sitemap()],
+  site: 'https://localhost:4321',
   redirects: {
     '/posts': '/', // redirect from /posts because that page doesn't exist.
   },

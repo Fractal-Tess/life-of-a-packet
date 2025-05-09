@@ -7,7 +7,8 @@ date: 'Apr 14 2025'
 thumbnail: 'thumbnails/part-1.jpeg'
 order: 1
 ---
-=s
+
+import Button from '../components/Button.svelte';
 
 # Welcome
 
@@ -18,9 +19,6 @@ In the series **The life of a packet** you will journey with me on a quest. We'l
 Our goal? To unravel the mysteries of the internet, understand the protocols that govern it, and maybe even learn some cool tech details along the way. Can't wait?
 
 Alright, let's go meet our hero and brave explorer - the **browser**!
-=/s
-
-=s
 
 ## Level 1: Character Creation & Getting the Map
 
@@ -39,7 +37,6 @@ You've seen these coordinates before... right? I mean, you must have, but in cas
 - 81.161.240.3
 
 Ok,so the first challenge is **translation**. How do we turn the castle's _name_ into its _location_ on the map?
-=s
 
 ## Consulting the Oracle: The Domain Name System **(DNS)**
 
@@ -57,15 +54,9 @@ Think of DNS lookup as asking a series of increasingly knowledgeable sages for d
 
 3.  **Visit the Town Oracle (Recursive Resolver):** Still no luck? The Operating System sends the query to a designated DNS server, usually one run by your Internet Service Provider (ISP) or a public one like Google (8.8.8.8) or Cloudflare (1.1.1.1). This is our **Recursive Resolver**. Its job is simple: "Find this IP address for me, and don't come back until you have it (or know it doesn't exist)." Analogy: Telling your assistant, "Get me the address for Dragon's Keep, I don't care how you do it."
 
-=/s
-
-=q
 ["Check the browser cache", "Check the OS cache", "Ask the recursive resolver"]
 0
 Your browser always checks its own memory first - it's like looking in your backpack before asking for directions.
-=/q
-
-=s
 
 Now, the Recursive Resolver starts _its_ journey (this is the fun part!):
 
@@ -78,12 +69,3 @@ Now, the Recursive Resolver starts _its_ journey (this is the fun part!):
 8.  **Passing the Map (OS to Browser):** The OS gives the precious IP address to the browser.
 
 _Phew!_ That was quite the consultation! This entire recursive process usually happens in milliseconds.
-
-=/s
-
-=q
-What is the purpose of DNS?
-["To store IP addresses permanently", "To speed up future DNS lookups", "To prevent DNS lookups entirely"]
-1
-Think of DNS caching like writing down directions - it saves time by remembering where you've been before.
-=/q
