@@ -9,22 +9,28 @@ order: 1
 ---
 
 import Button from '../components/Button.svelte';
+import Spliter from '../components/svelte/Spliter.svelte';
+import Begin from '../components/svelte/Begin.svelte';
 
-# Welcome
+<Begin />
 
-Hey there, brave explorer! Ever wondered what _really_ happens when you click a link or type a web address and hit Enter? It seems instant, right? Magic? Almost! But it's actually the start of an epic quest undertaken by a lot tiny adventurers: **data packets**.
+# The Beginning
+
+Hey there, brave explorer! 👋
+
+Ever wondered what _really_ happens when you browse the web? When you click a link or type a web address and hit Enter? It seems instant, right? Magic? Almost! But it's actually the start of an epic quest undertaken by a lot tiny adventurers: **data packets**.
 
 In the series **The life of a packet** you will journey with me on a quest. We'll follow a brave little packet from its creation on your computer, through the treacherous wilds of the internet, to its destination server and back again. Think of it like a digital odyssey, a game level packed with challenges, gatekeepers, and secret codes.
 
-Our goal? To unravel the mysteries of the internet, understand the protocols that govern it, and maybe even learn some cool tech details along the way. Can't wait?
+Our goal? To unravel the mysteries of the internet, understand the protocols that govern it, and maybe even learn some cool tech details along the way. Can't wait? **Let's go!**
 
-Alright, let's go meet our hero and brave explorer - the **browser**!
+<Spliter />
 
 ## Level 1: Character Creation & Getting the Map
 
 Our quest begins the moment you perform the sacred ritual: **The Click™** (or **The Type-and-Enter™**).
 
-You've just told your browser, "Hero! I need the treasure hidden at \`google.com\`!"
+You've just told your browser, "Hero! I need the treasure hidden at `google.com`!"
 
 Your browser, the faithful quest-giver, understands. Its first thought isn't about sending data yet; it's about _where_ to send it. \`google.com\` is a human-friendly name, like calling a castle "Dragon's Keep."
 
@@ -36,7 +42,9 @@ You've seen these coordinates before... right? I mean, you must have, but in cas
 - 142.251.141.46
 - 81.161.240.3
 
-Ok,so the first challenge is **translation**. How do we turn the castle's _name_ into its _location_ on the map?
+<Spliter />
+
+## Ok,so the first challenge is **translation**. How do we turn the castle's _name_ into its _location_ on the map?
 
 ## Consulting the Oracle: The Domain Name System **(DNS)**
 
@@ -54,8 +62,8 @@ Think of DNS lookup as asking a series of increasingly knowledgeable sages for d
 
 3.  **Visit the Town Oracle (Recursive Resolver):** Still no luck? The Operating System sends the query to a designated DNS server, usually one run by your Internet Service Provider (ISP) or a public one like Google (8.8.8.8) or Cloudflare (1.1.1.1). This is our **Recursive Resolver**. Its job is simple: "Find this IP address for me, and don't come back until you have it (or know it doesn't exist)." Analogy: Telling your assistant, "Get me the address for Dragon's Keep, I don't care how you do it."
 
-["Check the browser cache", "Check the OS cache", "Ask the recursive resolver"]
-0
+<Spliter />
+
 Your browser always checks its own memory first - it's like looking in your backpack before asking for directions.
 
 Now, the Recursive Resolver starts _its_ journey (this is the fun part!):

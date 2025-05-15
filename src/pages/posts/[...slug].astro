@@ -3,6 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 import { render } from "astro:content";
+import Driver  from '../../components/svelte/Driver.svelte'
+
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -22,9 +24,12 @@ const { Content } = await render(post);
   siteTitle={Astro.props.data.title}
   siteDescription={Astro.props.data.description}
 >
-  <Section class="prose-xl min-h-svh relative max-w-3xl mx-auto pt-12 pb-24">
-    <!-- <Driver content={post.body} client:load /> -->
-    <Content />
+  <Section  class="prose-xl min-h-svh relative max-w-3xl mx-auto pt-12 pb-24">
+    <Driver client:only />
+    <div content-container>
+      <Content />
+      <div class="fixed bottom-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-transparent to-primary  h-60 max-w-4xl w-full !opacity-100"/>
+    </div>
   </Section>
 </Layout>
 
@@ -34,5 +39,9 @@ const { Content } = await render(post);
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+
+  [content-container] > * {
+    @apply opacity-0 pointer-events-none transition-all duration-1000;
   }
 </style>
