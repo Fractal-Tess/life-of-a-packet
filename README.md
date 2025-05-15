@@ -18,3 +18,43 @@ This project is here to **demystify networking** for beginners, using playful po
   Each post is a mini-adventure, so you can learn at your own pace.
 
 ## What's inside? 📦
+
+- ✍️ **Posts:**  
+  Check out our growing collection of beginner-friendly articles in [`src/posts/`](src/posts/). Each one is a step on your journey from "What's a packet?" to "I get how the internet works!"
+- 🧩 **Components:**  
+  Interactive and visual goodies live in [`src/components/`](src/components/) to help you see networking in action.
+- 🏠 **Home Page:**  
+  Start your adventure at the main page and follow the links to each lesson.
+
+## Tech Stack 🛠️
+
+Built with:
+
+- **Astro** 🚀 (for super-fast sites)
+- **Svelte** 🧡 (for interactive fun)
+- **Tailwind CSS** 🎨 (for snazzy styles)
+- **MDX** ✍️ (for writing posts with code and visuals)
+
+## How to run it locally 🏃‍♂️
+
+1. **Clone this repo:**  
+   `git clone https://github.com/your-username/life-of-a-packet.git`
+2. **Install dependencies:**  
+   `pnpm install` (or `npm install` / `bun install`)
+3. **Start the dev server:**  
+   `pnpm dev`  
+   Then open [http://localhost:3000](http://localhost:3000) in your browser!
+
+## Contributing 🤝
+
+Got a cool idea or want to help make networking even more fun?  
+PRs and suggestions are always welcome! Check out the issues or start a discussion.
+
+## License 📜
+
+MIT — use, remix, and share!
+
+---
+
+Ready to see what happens when you send a packet?  
+Let's go! 🏁🌍
