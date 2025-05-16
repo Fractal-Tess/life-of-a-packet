@@ -1,0 +1,128 @@
+---
+title: '4: The Great Router Gateways'
+published: true
+description: "Discover how routers guide packets between networks. We'll explore routing tables, path selection, and the Border Gateway Protocol (BGP) in this chapter of our networking adventure."
+tags: ['Networking', 'Routers', 'Routing', 'BGP', 'Autonomous Systems']
+date: 'May 16 2025'
+thumbnail: 'thumbnails/part-4.jpeg'
+order: 4
+---
+
+import Spliter from '../components/svelte/Spliter.svelte';
+import Begin from '../components/svelte/Begin.svelte';
+import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+
+<Begin />
+
+# The Gateways Between Worlds
+
+Welcome back, intrepid explorer! 🌐
+
+Our packet has successfully navigated the local network, but now it faces its greatest challenge yet: crossing between networks. Just like a traveler needs to pass through border checkpoints when moving between countries, our packet needs to pass through routers to move between networks.
+
+In this chapter, we'll explore:
+- How routers work and their role in networking
+- Routing tables and path selection
+- Autonomous Systems and the Border Gateway Protocol (BGP)
+- The difference between routing and switching
+
+<SingleQuestion
+  client:load
+  label="What is the primary function of a router?"
+  choices={[
+    'To connect devices within a local network',
+    'To forward data between different networks',
+    'To convert digital signals to analog',
+    'To provide wireless connectivity',
+  ]}
+/>
+<Spliter />
+
+## Routers: The Network Gatekeepers
+
+Routers are like the border guards of the internet, deciding which path each packet should take to reach its destination. Here's what makes them special:
+
+- They operate at Layer 3 of the OSI model
+- They maintain routing tables (like maps of the network)
+- They use IP addresses to make forwarding decisions
+- They connect different networks together
+
+<SingleQuestion
+  client:load
+  label="Which OSI layer do routers primarily operate at?"
+  choices={[
+    'Physical Layer',
+    'Data Link Layer',
+    'Network Layer',
+    'Transport Layer',
+  ]}
+  correct={2}
+  explanation="Routers primarily operate at the Network Layer (Layer 3) of the OSI model, using IP addresses to route packets between networks."
+/>
+
+<Spliter />
+
+## Routing Tables: The Network Maps
+
+Every router maintains a routing table, which is like a map of the network. These tables contain:
+
+- Destination networks
+- Next hop addresses
+- Interface to use
+- Metric (cost of the path)
+
+When a packet arrives, the router:
+1. Checks the destination IP address
+2. Looks up the best path in its routing table
+3. Forwards the packet to the next hop
+
+<SingleQuestion
+  client:load
+  label="What information is typically found in a routing table?"
+  choices={[
+    'MAC addresses of local devices',
+    'List of connected Wi-Fi networks',
+    'Destination networks and next hop addresses',
+    'Encryption keys for secure communication',
+  ]}
+  correct={2}
+  explanation="Routing tables typically contain destination networks and next hop addresses, helping routers determine the best path for packets."
+/>
+
+<Spliter />
+
+## Autonomous Systems and BGP: The Internet's Backbone
+
+The internet is divided into Autonomous Systems (AS), which are like independent kingdoms in our networking world. Each AS:
+
+- Is a collection of IP networks
+- Has its own routing policies
+- Is identified by a unique AS number
+- Uses BGP to communicate with other ASes
+
+The Border Gateway Protocol (BGP) is like the diplomatic language of the internet, allowing different ASes to share routing information.
+
+<SingleQuestion
+  client:load
+  label="What does BGP stand for in networking?"
+  choices={[
+    'Border Gateway Protocol',
+    'Basic Gateway Protocol',
+    'Broadband Gateway Protocol',
+    'Binary Gateway Protocol',
+  ]}
+  correct={0}
+  explanation="BGP stands for Border Gateway Protocol, which is used to exchange routing information between different Autonomous Systems on the internet."
+/>
+
+<Spliter />
+
+## Next Steps in Our Journey
+
+Now that our packet has passed through the router gateways, in the next chapter we'll explore how it ensures reliable delivery. We'll learn about:
+- TCP and UDP protocols
+- Ports and sockets
+- The three-way handshake
+- Error checking and reliability
+
+Until then, happy routing! Remember, every packet's journey is a story of connections.
