@@ -8,14 +8,14 @@ This series will guide university students through the fundamentals of computer 
 ### 1. The Quest Begins! (DNS & IP Addresses)
 - Introduction to networking concepts
 - The role of DNS in translating domain names
-- Understanding IP addresses
+- Understanding IP addresses and subnetting
 - The DNS lookup process
 
 ### 2. Packing for the Journey (Data Packets & Protocols)
 - What are data packets?
+- Packet structure and headers
 - Introduction to network protocols
 - The OSI model overview
-- Packet structure and headers
 
 ### 3. Crossing the Local Bridge (Local Networks & MAC Addresses)
 - How devices connect locally
@@ -24,28 +24,28 @@ This series will guide university students through the fundamentals of computer 
 - ARP protocol explained
 
 ### 4. The Great Router Gateways (Routing & Switching)
-- What routers do
+- How routers work
 - Routing tables and path selection
-- Switching vs routing
+- Autonomous Systems (AS) and BGP
 - Network topology basics
 
 ### 5. The TCP/IP Kingdom (TCP & UDP)
 - TCP vs UDP protocols
-- Connection-oriented vs connectionless
+- Ports and sockets
 - Three-way handshake
 - Error checking and reliability
 
 ### 6. The Firewall Guardians (Network Security)
-- What firewalls do
-- Basic security concepts
-- Encryption basics
+- How firewalls work
+- NAT (Network Address Translation)
+- Stateful vs stateless inspection
 - Common network threats
 
-### 7. The Cloud Castle (Cloud Computing & CDNs)
-- What is cloud computing?
-- Content Delivery Networks
-- Virtualization basics
-- Cloud service models (IaaS, PaaS, SaaS)
+### 7. The Internet Backbone (Global Infrastructure)
+- Internet Service Providers
+- Undersea fiber optic cables
+- Internet exchange points
+- Global network infrastructure
 
 ### 8. The Wireless Wizardry (Wi-Fi & Mobile Networks)
 - How Wi-Fi works
@@ -53,23 +53,23 @@ This series will guide university students through the fundamentals of computer 
 - Wireless security
 - Signal strength and interference
 
-### 9. The Protocol Forest (Application Layer Protocols)
-- HTTP/HTTPS basics
-- Email protocols (SMTP, POP3, IMAP)
-- FTP and file transfer
-- DNS revisited
+### 9. The Packet's Journey (Routing in Action)
+- How packets are routed globally
+- Traceroute and packet tracing
+- Routing between gateways
+- Handling network congestion
 
-### 10. The Internet Backbone (Internet Infrastructure)
-- Internet Service Providers
-- Undersea cables and satellites
-- Internet exchange points
-- Global network infrastructure
+### 10. The Network Address Maze (IP Addressing)
+- IPv4 vs IPv6
+- CIDR notation
+- Public vs private IP addresses
+- IP address allocation
 
 ### 11. The Future Frontier (Emerging Technologies)
-- IPv6 adoption
-- IoT and smart devices
+- Software Defined Networking (SDN)
+- Network Function Virtualization (NFV)
 - 5G and beyond
-- Network virtualization
+- Network automation
 
 ### 12. The Hero's Return (Putting It All Together)
 - Review of the packet's journey
