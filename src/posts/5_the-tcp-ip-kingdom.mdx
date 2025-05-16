@@ -11,6 +11,8 @@ order: 5
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -21,6 +23,7 @@ Welcome back, protocol explorer! 🏰
 Our packet has navigated routers and crossed networks, but now it needs to ensure it arrives safely and in the right order. Enter the transport layer protocols - the guardians of reliable delivery.
 
 In this chapter, we'll explore:
+
 - The difference between TCP and UDP
 - Ports and sockets
 - The three-way handshake
@@ -29,74 +32,76 @@ In this chapter, we'll explore:
 <SingleQuestion
   client:load
   label="Which protocol provides reliable, ordered delivery of data?"
-  choices={[
-    'TCP',
-    'UDP',
-    'Both TCP and UDP',
-    'Neither TCP nor UDP',
-  ]}
+  choices={['TCP', 'UDP', 'Both TCP and UDP', 'Neither TCP nor UDP']}
+  correct={0}
+  explanation="TCP provides reliable, ordered delivery of data."
 />
 <Spliter />
 
 ## TCP: The Reliable Courier
 
 Transmission Control Protocol (TCP) is like a meticulous courier service. It ensures that:
+
+<Spliter />
+
 - All packets arrive in order
 - No packets are lost
 - Data is delivered error-free
 
 Key features of TCP:
+
+<Spliter />
+
 - Connection-oriented
 - Three-way handshake
 - Error checking
 - Flow control
 
-<SingleQuestion
-  client:load
-  label="What is the purpose of the TCP three-way handshake?"
+<MultipleQuestion
+  label="Which of the following are features of TCP?"
   choices={[
-    'To encrypt the data',
-    'To establish a connection',
-    'To compress the data',
-    'To authenticate the user',
+    'Connection-oriented',
+    'Three-way handshake',
+    'Error checking',
+    'Connectionless',
   ]}
-  correct={1}
-  explanation="The TCP three-way handshake is used to establish a reliable connection between two devices before data transfer begins."
+  correct={[0, 1, 2]}
+  explanation="TCP is connection-oriented, uses a three-way handshake, and provides error checking. It is not connectionless."
 />
-
 <Spliter />
 
 ## UDP: The Speedy Messenger
 
 User Datagram Protocol (UDP) is like a speedy messenger. It's:
+
+<Spliter />
+
 - Connectionless
 - Faster but less reliable
 - Ideal for real-time applications
 
 Common uses of UDP:
+
+<Spliter />
+
 - Video streaming
 - Online gaming
 - Voice over IP (VoIP)
 - DNS queries
 
-<SingleQuestion
-  client:load
-  label="Which of these applications would most likely use UDP?"
-  choices={[
-    'File transfer',
-    'Online banking',
-    'Video streaming',
-    'Email',
-  ]}
-  correct={2}
-  explanation="Video streaming often uses UDP because it prioritizes speed over reliability, and can tolerate some packet loss."
+<OpenQuestion
+  label="Which protocol is often used for video streaming and why? (Short answer)"
+  correct="UDP"
+  explanation="UDP is often used for video streaming because it prioritizes speed over reliability and can tolerate some packet loss."
 />
-
 <Spliter />
 
 ## Ports and Sockets: The Network Addresses
 
 Ports and sockets are like apartment numbers in a building:
+
+<Spliter />
+
 - Ports identify specific services (e.g., HTTP on port 80)
 - Sockets combine IP address and port number
 - Well-known ports are standardized (0-1023)
@@ -104,24 +109,23 @@ Ports and sockets are like apartment numbers in a building:
 <SingleQuestion
   client:load
   label="What is the well-known port number for HTTPS?"
-  choices={[
-    '80',
-    '443',
-    '8080',
-    '21',
-  ]}
+  choices={['80', '443', '8080', '21']}
   correct={1}
   explanation="HTTPS typically uses port 443, while HTTP uses port 80."
 />
-
 <Spliter />
 
 ## Next Steps in Our Journey
 
 Now that our packet is safely delivered, in the next chapter we'll explore the guardians of network security. We'll learn about:
+
 - Firewalls and their operation
 - Network Address Translation (NAT)
 - Stateful vs stateless inspection
 - Common network threats
 
 Until then, keep your connections secure! Remember, every protocol has its purpose.
+
+# End of Chapter
+
+<Spliter />

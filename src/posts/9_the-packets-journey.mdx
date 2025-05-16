@@ -11,6 +11,8 @@ order: 9
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -36,6 +38,8 @@ In this chapter, we'll explore:
     'To manage wireless connections',
     'To encrypt internet traffic',
   ]}
+  correct={1}
+  explanation="Global routing finds the best path between networks worldwide."
 />
 <Spliter />
 
@@ -48,12 +52,16 @@ Global routing is like a complex web of highways:
 - Routes are chosen based on policies and metrics
 - Redundancy ensures reliability
 
-<SingleQuestion
-  client:load
-  label="Which protocol is primarily used for global routing between ASes?"
-  choices={['OSPF', 'BGP', 'RIP', 'EIGRP']}
-  correct={1}
-  explanation="BGP (Border Gateway Protocol) is the primary protocol used for routing between Autonomous Systems (ASes) on the internet."
+<MultipleQuestion
+  label="Which of the following are true about BGP?"
+  choices={[
+    'It is used for routing between Autonomous Systems',
+    'It is a type of firewall',
+    'It is the main protocol for global routing',
+    'It manages wireless connections',
+  ]}
+  correct={[0, 2]}
+  explanation="BGP is used for routing between Autonomous Systems and is the main protocol for global routing."
 />
 
 <Spliter />
@@ -67,16 +75,9 @@ Traceroute is like a magical map that shows our packet's journey:
 - Helps diagnose network issues
 - Uses TTL (Time to Live) field in packets
 
-<SingleQuestion
-  client:load
-  label="What does TTL stand for in networking?"
-  choices={[
-    'Time to Live',
-    'Total Transmission Latency',
-    'Transit Time Limit',
-    'Time to Load',
-  ]}
-  correct={0}
+<OpenQuestion
+  label="What does TTL stand for in networking? (Short answer)"
+  correct="Time to Live"
   explanation="TTL stands for Time to Live, which limits the lifespan of a packet to prevent infinite loops in the network."
 />
 
@@ -127,3 +128,7 @@ Now that we've followed our packet's global journey, in the next chapter we'll e
 - IP address allocation
 
 Until then, keep exploring! Remember, every packet's journey is a global adventure.
+
+# End of Chapter
+
+<Spliter />

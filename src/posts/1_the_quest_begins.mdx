@@ -1,0 +1,171 @@
+---
+title: '1: The Quest Begins!'
+published: true
+description: "Embark on the first leg of our packet's epic journey! We explore what happens when you click a link, meet the DNS Oracle, and discover how your computer finds the map to distant web servers."
+tags: ['Networking', 'DNS', 'HTTP', 'PacketLife', 'InternetBasics']
+date: 'Apr 14 2025'
+thumbnail: 'thumbnails/part-1.jpeg'
+order: 1
+---
+
+import Spliter from '../components/svelte/Spliter.svelte';
+import Begin from '../components/svelte/Begin.svelte';
+import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
+
+<Begin />
+
+# The Beginning
+
+Hey there, brave explorer! 👋
+
+<Spliter />
+
+Ever wondered what _really_ happens when you browse the web? When you click a link
+or type a web address and hit Enter? It seems instant, right? Magic? Almost! But
+it's actually the start of an epic quest undertaken by a lot tiny adventurers: **data
+packets**.
+
+<Spliter />
+
+In the series **The life of a packet** you will journey with me on a quest. We'll follow a brave little packet from its creation on your computer, through the treacherous wilds of the internet, to its destination server and back again. Think of it like a digital odyssey, a game level packed with challenges, gatekeepers, and secret codes.
+
+<Spliter />
+
+Our goal? To unravel the mysteries of the internet, understand the protocols that
+govern it, and maybe even learn some cool tech details along the way. Can't wait?
+**Let's go!**
+
+<Spliter />
+
+## Level 1: Character Creation & Getting the Map
+
+Our quest begins the moment you perform the sacred ritual: **The Click™** (or **The Type-and-Enter™**).
+
+You've just told your browser, "Hero! I need the treasure hidden at `google.com`!"
+
+Your browser, the faithful quest-giver, understands. Its first thought isn't about sending data yet; it's about _where_ to send it. `google.com` is a human-friendly name, like calling a castle "Dragon's Keep."
+
+<Spliter />
+
+Computers, however, prefer precise coordinates – **IP Addresses**. Think of them as precise coordinates on our digital map.
+![IP Address Example](/assets/1.jpeg)
+
+<Spliter />
+You've seen these coordinates before... right? I mean, you must have, but in case
+you haven't, they look something like this:
+
+- 142.251.141.46
+- 81.161.240.3
+
+<Spliter />
+
+This is called an **IPv4** address. They are basically a 4 numbers between 0 and 255 separated by dots.
+
+There is another version called **IPv6** which is a 8 numbers between 0 and ffff separated by colons, but we won't need to worry about that in this quest.
+
+<Spliter />
+
+So why do computers need these coordinates?
+
+Think of IP addresses like unique identification numbers in a massive digital library system:
+
+Just as every book needs a unique catalog number to be found in a vast library,
+every device on the internet needs a precise numerical address (IP address) to receive data.
+
+These addresses don't represent physical locations - they're purely logical identifiers
+that help routers determine how to forward data through the network, like how a library's
+organization system helps locate books regardless of which shelf they're actually on.
+
+<Spliter />
+The library analogy helps understand the concept, but let's be more precise: The
+internet is essentially one giant interconnected network where devices are identified
+by their IP addresses. These addresses are logical identifiers that exist independently
+of any physical location - a device could move across the world and keep the same
+IP address as long as it stays on the same network.
+
+<Spliter />
+
+<SingleQuestion
+  client:load
+  label="What is an IP address used for in networking?"
+  choices={[
+    'To track geographical locations',
+    'To uniquely identify a device on a network',
+    'To encrypt data packets',
+    'To assign domain names',
+  ]}
+  correct={1}
+  explanation="An IP address uniquely identifies a device on a network, allowing data to be routed to the correct destination."
+/>
+
+<Spliter />
+
+## Ok, so the first challenge is **translation**. How do we turn the castle's _name_ into its _location_ on the map?
+
+## Consulting the Oracle: The Domain Name System **(DNS)**
+
+<Spliter />
+
+Just as our hero needs a map to find the treasure, your computer needs to translate the castle's name (`google.com`) into its secret coordinates (IP address). But how does it do this? By consulting the internet's wise oracle: **DNS**!
+
+Let's follow the steps of this magical consultation, RPG-style:
+
+<Spliter />
+
+### Step 1: Check the Backpack (Browser Cache)
+
+Before setting out, the browser rummages through its backpack. Has it visited this castle before? If yes, it already has the map!
+
+- _Quest Log: Found the map locally! Skip to destination._
+
+<Spliter />
+
+### Step 2: Ask the Local Guide (OS Cache/Stub Resolver)
+
+If the backpack is empty, the browser turns to the local guide—your Operating System. Maybe the OS remembers the way from a previous adventure.
+
+- _Quest Log: Local guide knew the way! Skip to destination._
+
+<Spliter />
+
+### Step 3: Visit the Town Oracle (Recursive Resolver)
+
+Still lost? Time to visit the town oracle—a special DNS server (often run by your ISP or a public one like Google or Cloudflare). The OS asks: "Can you find the coordinates for this castle?" The oracle promises not to return until it has the answer (or knows it doesn't exist).
+
+<Spliter />
+
+Now, the oracle embarks on its own quest:
+
+<Spliter />
+
+#### 3.1: Query the High Council (Root Servers)
+
+The oracle approaches the High Council—the Root Servers. "Where can I find the sages of the `.com` kingdom?" The council doesn't know the exact answer, but points the way to the `.com` sages (TLD servers).
+
+<Spliter />
+
+#### 3.2: Consult the Regional Sage (TLD Servers)
+
+Next, the oracle visits the `.com` sage. "Who knows about `epic-example-quest.com`?" The sage directs the oracle to the Mapmaker Guild—the Authoritative Nameservers for that domain.
+
+<Spliter />
+
+#### 3.3: Get the Final Directions (Authoritative Nameservers)
+
+Finally, the oracle finds the Mapmaker Guild. "What are the coordinates for `google.com`?" The guild reveals the secret: the IP address!
+
+<Spliter />
+
+### Step 4: Return with the Map
+
+The oracle rushes back, passing the coordinates to your OS, which hands them to the browser. Now, our hero has the map and can continue the quest!
+
+_Surprisingly, this whole adventure usually takes just milliseconds!_
+
+<Spliter />
+
+# End of Chapter
+
+<Spliter />

@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="fixed top-0 left-0 w-full md:w-16 h-16 md:h-screen flex md:flex-col items-center justify-center gap-4 p-3 border-b md:border-b-0 md:border-r border-edge bg-primary/95 backdrop-blur-sm z-10"
+  class="fixed top-0 left-0 w-full md:w-16 h-16 md:h-screen flex md:flex-col items-center justify-center gap-2 p-3 border-b md:border-b-0 md:border-r border-edge bg-primary/95 backdrop-blur-sm z-10"
 >
   <a
     href="/"
@@ -30,7 +30,7 @@
 
   {#each driver.sections as _, i}
     <button
-      class="relative w-2 h-2 md:w-2 md:h-12 rounded-lg {i <= driver.progress
+      class="relative w-2 h-2 md:w-2 md:h-6 rounded-lg {i <= driver.progress
         ? 'bg-accent cursor-pointer'
         : 'bg-edge/30 cursor-not-allowed'}"
       onclick={() => driver.scrollTo(i)}

@@ -11,6 +11,8 @@ order: 10
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -21,6 +23,7 @@ Welcome back, addressing explorer! 🧭
 Our packet has traveled far and wide, but now we must understand the complex system that makes it all possible: IP addressing. This is the foundation of how devices find each other on the network.
 
 In this chapter, we'll explore:
+
 - IPv4 vs IPv6 addressing
 - CIDR notation and subnetting
 - Public vs private IP addresses
@@ -35,6 +38,8 @@ In this chapter, we'll explore:
     'To improve wireless connectivity',
     'To simplify network configuration',
   ]}
+  correct={1}
+  explanation="IPv6 was developed to provide more IP addresses."
 />
 <Spliter />
 
@@ -43,26 +48,27 @@ In this chapter, we'll explore:
 The internet has two main addressing systems:
 
 **IPv4:**
+
 - 32-bit addresses (4.3 billion possible)
 - Dotted decimal notation (e.g., 192.168.1.1)
 - Running out of available addresses
 
 **IPv6:**
+
 - 128-bit addresses (340 undecillion possible)
 - Hexadecimal notation (e.g., 2001:0db8:85a3::8a2e:0370:7334)
 - Built-in security features
 
-<SingleQuestion
-  client:load
-  label="How many bits are in an IPv6 address?"
+<MultipleQuestion
+  label="Which of the following are true about IPv6?"
   choices={[
-    '32',
-    '64',
-    '128',
-    '256',
+    '128-bit addresses',
+    'Hexadecimal notation',
+    'Built-in security features',
+    'Same address space as IPv4',
   ]}
-  correct={2}
-  explanation="IPv6 addresses are 128 bits long, providing a vastly larger address space than IPv4's 32-bit addresses."
+  correct={[0, 1, 2]}
+  explanation="IPv6 uses 128-bit addresses, hexadecimal notation, and has built-in security features. It does not have the same address space as IPv4."
 />
 
 <Spliter />
@@ -76,16 +82,9 @@ CIDR (Classless Inter-Domain Routing) is like a shorthand for IP addresses:
 - Allows for flexible subnetting
 - More efficient use of IP addresses
 
-<SingleQuestion
-  client:load
-  label="What does CIDR stand for in networking?"
-  choices={[
-    'Classless Inter-Domain Routing',
-    'Classful Internet Domain Routing',
-    'Classless Internet Data Routing',
-    'Classful Inter-Domain Routing',
-  ]}
-  correct={0}
+<OpenQuestion
+  label="What does CIDR stand for in networking? (Type the full phrase)"
+  correct="Classless Inter-Domain Routing"
   explanation="CIDR stands for Classless Inter-Domain Routing, which allows for more flexible allocation of IP addresses."
 />
 
@@ -96,12 +95,14 @@ CIDR (Classless Inter-Domain Routing) is like a shorthand for IP addresses:
 IP addresses come in two main types:
 
 **Public IPs:**
+
 - Globally unique
 - Used on the internet
 - Assigned by ISPs
 - Can be static or dynamic
 
 **Private IPs:**
+
 - Used within local networks
 - Not routable on the internet
 - Defined ranges (e.g., 192.168.x.x)
@@ -112,6 +113,7 @@ IP addresses come in two main types:
 ## IP Address Allocation: The Address Registry
 
 IP addresses are managed by:
+
 - IANA (Internet Assigned Numbers Authority)
 - Regional Internet Registries (RIRs)
 - ISPs allocate to end users
@@ -120,12 +122,7 @@ IP addresses are managed by:
 <SingleQuestion
   client:load
   label="Which organization is responsible for global IP address allocation?"
-  choices={[
-    'ICANN',
-    'IANA',
-    'ISOC',
-    'IEEE',
-  ]}
+  choices={['ICANN', 'IANA', 'ISOC', 'IEEE']}
   correct={1}
   explanation="IANA (Internet Assigned Numbers Authority) is responsible for global IP address allocation."
 />
@@ -135,9 +132,14 @@ IP addresses are managed by:
 ## Next Steps in Our Journey
 
 Now that we've navigated the IP address maze, in the next chapter we'll explore the future of networking. We'll learn about:
+
 - Software Defined Networking (SDN)
 - Network Function Virtualization (NFV)
 - 5G and beyond
 - Network automation
 
 Until then, keep addressing! Remember, every device has its place in the network.
+
+# End of Chapter
+
+<Spliter />

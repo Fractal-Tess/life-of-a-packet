@@ -2,7 +2,8 @@
 title: '7: The Internet Backbone'
 published: true
 description: "Explore the physical infrastructure of the internet. We'll discover undersea cables, internet exchange points, and global network architecture in this chapter of our networking adventure."
-tags: ['Networking', 'Infrastructure', 'Undersea Cables', 'IXPs', 'Global Network']
+tags:
+  ['Networking', 'Infrastructure', 'Undersea Cables', 'IXPs', 'Global Network']
 date: 'May 16 2025'
 thumbnail: 'thumbnails/part-7.jpeg'
 order: 7
@@ -11,6 +12,8 @@ order: 7
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -21,6 +24,7 @@ Welcome back, infrastructure explorer! 🌍
 Our packet has navigated digital protocols and security measures, but now we'll explore the physical infrastructure that makes global communication possible. The internet isn't just virtual - it's a vast network of physical connections spanning the globe.
 
 In this chapter, we'll explore:
+
 - Internet Service Providers (ISPs) and their role
 - Undersea fiber optic cables
 - Internet Exchange Points (IXPs)
@@ -35,6 +39,8 @@ In this chapter, we'll explore:
     'To monitor ocean temperatures',
     'To support offshore oil drilling',
   ]}
+  correct={1}
+  explanation="Undersea cables carry internet traffic between continents."
 />
 <Spliter />
 
@@ -47,17 +53,16 @@ ISPs are like the local guides of the internet. They:
 - Offer various types of connections (DSL, cable, fiber)
 - Manage local network infrastructure
 
-<SingleQuestion
-  client:load
-  label="Which of these is NOT typically an ISP service?"
+<MultipleQuestion
+  label="Which of the following are typically services provided by ISPs?"
   choices={[
     'Providing internet access',
     'Managing undersea cables',
     'Offering email services',
     'Providing Wi-Fi routers',
   ]}
-  correct={1}
-  explanation="While ISPs provide internet access and related services, they typically don't manage undersea cables directly."
+  correct={[0, 2, 3]}
+  explanation="ISPs provide internet access, email services, and Wi-Fi routers, but typically do not manage undersea cables."
 />
 
 <Spliter />
@@ -71,16 +76,9 @@ These cables are the backbone of global communication:
 - Use fiber optic technology
 - Protected by specialized ships and equipment
 
-<SingleQuestion
-  client:load
-  label="What technology do modern undersea cables use?"
-  choices={[
-    'Copper wires',
-    'Fiber optics',
-    'Satellite links',
-    'Microwave transmission',
-  ]}
-  correct={1}
+<OpenQuestion
+  label="What technology do modern undersea cables use? (Short answer)"
+  correct="Fiber optics"
   explanation="Modern undersea cables use fiber optic technology for high-speed data transmission."
 />
 
@@ -113,6 +111,7 @@ IXPs are like international airports for data:
 ## The Global Network Architecture
 
 The internet's physical structure includes:
+
 - Tier 1 networks (global backbone)
 - Tier 2 networks (regional providers)
 - Tier 3 networks (local ISPs)
@@ -123,9 +122,14 @@ The internet's physical structure includes:
 ## Next Steps in Our Journey
 
 Now that we've explored the internet's physical infrastructure, in the next chapter we'll dive into wireless technologies. We'll learn about:
+
 - How Wi-Fi works
 - Mobile network generations
 - Wireless security
 - Signal strength and interference
 
 Until then, keep exploring! Remember, every packet's journey relies on a vast physical network.
+
+# End of Chapter
+
+<Spliter />

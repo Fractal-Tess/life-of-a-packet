@@ -11,6 +11,8 @@ order: 12
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -31,6 +33,8 @@ In this final chapter, we'll:
   client:load
   label="Which component is responsible for translating domain names to IP addresses?"
   choices={['Router', 'DNS', 'Firewall', 'Switch']}
+  correct={1}
+  explanation="DNS is responsible for translating domain names to IP addresses."
 />
 <Spliter />
 
@@ -80,12 +84,17 @@ Let's see networking in action:
 3. **Online Gaming:** Latency optimization → NAT → Firewalls
 4. **IoT Devices:** Wireless → Security → Automation
 
-<SingleQuestion
-  client:load
-  label="Which protocol is typically used for video streaming?"
-  choices={['TCP', 'UDP', 'ICMP', 'BGP']}
-  correct={1}
-  explanation="UDP is typically used for video streaming because it prioritizes speed over reliability."
+<MultipleQuestion
+  label="Which of the following are examples of real-world networking scenarios?"
+  choices={[
+    'Web Browsing: DNS → TCP → IP → Routing',
+    'Video Streaming: UDP → QoS → CDN',
+    'Online Gaming: Latency optimization → NAT → Firewalls',
+    'IoT Devices: Wireless → Security → Automation',
+    'Cooking: Oven → Timer → Plate',
+  ]}
+  correct={[0, 1, 2, 3]}
+  explanation="The first four are real-world networking scenarios; the last is not."
 />
 
 <Spliter />
@@ -106,3 +115,7 @@ Your networking journey doesn't end here:
 Congratulations on completing this networking adventure! Remember, every click, every connection, and every packet tells a story. Keep exploring, keep learning, and keep building the networks of tomorrow.
 
 Until our next adventure, happy networking!
+
+# End of Chapter
+
+<Spliter />

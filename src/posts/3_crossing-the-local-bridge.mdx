@@ -11,6 +11,8 @@ order: 3
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -21,6 +23,7 @@ Welcome back, network navigator! 🌉
 Our packet is now properly packed and ready for its first challenge: navigating the local network. Just like crossing a bridge to leave your village, our packet needs to find its way to the local gateway before it can begin its wider journey.
 
 In this chapter, we'll explore:
+
 - What MAC addresses are and how they work
 - The basics of Ethernet and Wi-Fi
 - How the ARP protocol helps devices find each other
@@ -35,6 +38,8 @@ In this chapter, we'll explore:
     'To encrypt network traffic',
     'To manage IP address allocation',
   ]}
+  correct={1}
+  explanation="A MAC address uniquely identifies devices on a local network."
 />
 <Spliter />
 
@@ -42,72 +47,74 @@ In this chapter, we'll explore:
 
 Every device on a local network has a unique Media Access Control (MAC) address. Think of it as your house number on your street - it's how devices find each other locally.
 
+<Spliter />
+
 A MAC address:
+
 - Is 48 bits long (12 hexadecimal characters)
 - Looks like: 00:1A:2B:3C:4D:5E
 - Is burned into the network interface card (NIC)
 - Works at Layer 2 of the OSI model
 
-<SingleQuestion
-  client:load
-  label="Which OSI layer do MAC addresses operate at?"
+<MultipleQuestion
+  label="Which of the following statements about MAC addresses are true?"
   choices={[
-    'Physical Layer',
-    'Data Link Layer',
-    'Network Layer',
-    'Transport Layer',
+    'They are 48 bits long',
+    'They are burned into the NIC',
+    'They operate at Layer 2 of the OSI model',
+    'They are used for global internet routing',
   ]}
-  correct={1}
-  explanation="MAC addresses operate at the Data Link Layer (Layer 2) of the OSI model, handling local network delivery."
+  correct={[0, 1, 2]}
+  explanation="MAC addresses are 48 bits, burned into the NIC, and operate at Layer 2. They are not used for global internet routing."
 />
-
 <Spliter />
 
 ## The ARP Protocol: The Local Guide
 
 The Address Resolution Protocol (ARP) is like a local guide that helps translate between IP addresses and MAC addresses. Here's how it works:
 
+<Spliter />
+
 1. Device A wants to send data to Device B
 2. Device A broadcasts an ARP request: "Who has this IP address?"
 3. Device B responds with its MAC address
 4. Device A stores this mapping in its ARP cache
 
-<SingleQuestion
-  client:load
-  label="What does ARP stand for in networking?"
-  choices={[
-    'Address Resolution Protocol',
-    'Automatic Routing Protocol',
-    'Advanced Routing Protocol',
-    'Address Routing Protocol',
-  ]}
-  correct={0}
+<OpenQuestion
+  label="What does ARP stand for in networking? (Type the full phrase)"
+  correct="Address Resolution Protocol"
   explanation="ARP stands for Address Resolution Protocol, which maps IP addresses to MAC addresses on a local network."
 />
-
 <Spliter />
 
 ## Ethernet and Wi-Fi: The Local Bridges
 
 Our packet can cross the local network using two main technologies:
 
+<Spliter />
+
 **Ethernet:**
+
 - Wired connection
 - Uses cables (Cat5e, Cat6)
 - Fast and reliable
 - Common in offices and homes
 
 **Wi-Fi:**
+
 - Wireless connection
 - Uses radio waves
 - More convenient but less reliable
 - Common in homes and public spaces
+
+# End of Chapter
 
 <Spliter />
 
 ## Next Steps in Our Journey
 
 Now that our packet has crossed the local bridge, in the next chapter we'll explore how it navigates between networks. We'll learn about:
+
 - How routers work
 - Routing tables and path selection
 - Autonomous Systems and BGP

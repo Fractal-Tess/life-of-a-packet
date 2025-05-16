@@ -11,6 +11,8 @@ order: 11
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -21,6 +23,7 @@ Welcome back, future explorer! 🚀
 Our packet has traveled through the present-day network, but now it's time to look ahead. The future of networking is full of exciting technologies that will change how we connect and communicate.
 
 In this chapter, we'll explore:
+
 - Software Defined Networking (SDN)
 - Network Function Virtualization (NFV)
 - The evolution of 5G and beyond
@@ -35,6 +38,8 @@ In this chapter, we'll explore:
     'Better wireless coverage',
     'Improved hardware performance',
   ]}
+  correct={1}
+  explanation="SDN's primary benefit is centralized network control and programmability."
 />
 <Spliter />
 
@@ -71,6 +76,18 @@ NFV is like turning hardware into software:
 - Increases flexibility and scalability
 - Reduces hardware costs
 
+<MultipleQuestion
+  label="Which of the following are benefits of Network Function Virtualization (NFV)?"
+  choices={[
+    'Virtualizes network functions',
+    'Runs on standard servers',
+    'Increases flexibility and scalability',
+    'Requires specialized hardware',
+  ]}
+  correct={[0, 1, 2]}
+  explanation="NFV virtualizes network functions, runs on standard servers, and increases flexibility and scalability. It does not require specialized hardware."
+/>
+
 <Spliter />
 
 ## 5G and Beyond: The Wireless Future
@@ -82,16 +99,9 @@ The evolution of mobile networks continues:
 - Integration with IoT devices
 - Research into 6G already underway
 
-<SingleQuestion
-  client:load
-  label="What is network slicing in 5G?"
-  choices={[
-    'Dividing the network into physical segments',
-    'Creating virtual networks for different use cases',
-    'Splitting data packets into smaller pieces',
-    'Separating wireless frequencies',
-  ]}
-  correct={1}
+<OpenQuestion
+  label="What is network slicing in 5G? (Short answer)"
+  correct="Creating virtual networks for different use cases"
   explanation="Network slicing in 5G involves creating virtual networks tailored for specific use cases or services."
 />
 
@@ -106,11 +116,14 @@ Automation is transforming networking:
 - Predictive maintenance
 - Self-healing networks
 
+# End of Chapter
+
 <Spliter />
 
 ## Next Steps in Our Journey
 
 Now that we've glimpsed the future of networking, in our final chapter we'll review our packet's journey. We'll learn about:
+
 - How all the components work together
 - Real-world networking scenarios
 - Continuing your networking adventure

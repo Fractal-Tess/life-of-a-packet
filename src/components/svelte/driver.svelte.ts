@@ -31,6 +31,9 @@ export class Driver {
     // Reset canContinue for each new section
     this.canContinue = false;
     this.scrollTo(this.progress);
+    if (this.progress === this.sections.length - 1) {
+      this.finished = true;
+    }
   }
 
   private init() {

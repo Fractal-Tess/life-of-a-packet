@@ -2,7 +2,14 @@
 title: '8: The Wireless Wizardry'
 published: true
 description: "Discover the magic of wireless networking. We'll explore Wi-Fi, mobile networks, wireless security, and signal propagation in this chapter of our networking adventure."
-tags: ['Networking', 'Wi-Fi', 'Mobile Networks', 'Wireless Security', 'Signal Propagation']
+tags:
+  [
+    'Networking',
+    'Wi-Fi',
+    'Mobile Networks',
+    'Wireless Security',
+    'Signal Propagation',
+  ]
 date: 'May 16 2025'
 thumbnail: 'thumbnails/part-8.jpeg'
 order: 8
@@ -11,6 +18,8 @@ order: 8
 import Spliter from '../components/svelte/Spliter.svelte';
 import Begin from '../components/svelte/Begin.svelte';
 import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+import MultipleQuestion from '../components/svelte/questions/MultipleQuestion.svelte';
+import OpenQuestion from '../components/svelte/questions/OpenQuestion.svelte';
 
 <Begin />
 
@@ -21,6 +30,7 @@ Welcome back, wireless explorer! 📶
 Our packet has traveled through cables and routers, but now it's time to explore the magical world of wireless networking. From Wi-Fi to mobile networks, wireless technology has revolutionized how we connect.
 
 In this chapter, we'll explore:
+
 - How Wi-Fi works
 - Mobile network generations (3G, 4G, 5G)
 - Wireless security considerations
@@ -35,6 +45,8 @@ In this chapter, we'll explore:
     'Better security than wired networks',
     'Lower cost than wired networks',
   ]}
+  correct={1}
+  explanation="The primary advantage of wireless networking is mobility and convenience."
 />
 <Spliter />
 
@@ -47,17 +59,16 @@ Wi-Fi is like an invisible bridge connecting devices:
 - Access points manage connections
 - Range affected by obstacles and interference
 
-<SingleQuestion
-  client:load
-  label="Which Wi-Fi standard introduced 5GHz band support?"
+<MultipleQuestion
+  label="Which of the following are features of Wi-Fi?"
   choices={[
-    '802.11a',
-    '802.11b',
-    '802.11g',
-    '802.11n',
+    'Uses radio waves',
+    'IEEE 802.11 standards',
+    'Access points manage connections',
+    'Always uses 5GHz band',
   ]}
-  correct={0}
-  explanation="802.11a was the first Wi-Fi standard to introduce 5GHz band support, while earlier standards used only 2.4GHz."
+  correct={[0, 1, 2]}
+  explanation="Wi-Fi uses radio waves, follows IEEE 802.11 standards, and uses access points. It does not always use 5GHz."
 />
 
 <Spliter />
@@ -71,16 +82,9 @@ Mobile networks are like a vast orchestra of cell towers:
 - Handoff between towers as you move
 - 5G promises faster speeds and lower latency
 
-<SingleQuestion
-  client:load
-  label="What is the primary advantage of 5G over 4G?"
-  choices={[
-    'Better battery life',
-    'Higher data speeds and lower latency',
-    'Longer range',
-    'Better building penetration',
-  ]}
-  correct={1}
+<OpenQuestion
+  label="What is the primary advantage of 5G over 4G? (Short answer)"
+  correct="Higher data speeds and lower latency"
   explanation="5G's primary advantages are higher data speeds and lower latency compared to 4G networks."
 />
 
@@ -98,12 +102,7 @@ Wireless networks need special protection:
 <SingleQuestion
   client:load
   label="Which wireless encryption protocol is considered most secure?"
-  choices={[
-    'WEP',
-    'WPA',
-    'WPA2',
-    'WPA3',
-  ]}
+  choices={['WEP', 'WPA', 'WPA2', 'WPA3']}
   correct={3}
   explanation="WPA3 is currently the most secure wireless encryption protocol, with improved security features over its predecessors."
 />
@@ -113,6 +112,7 @@ Wireless networks need special protection:
 ## Signal Propagation: The Invisible Waves
 
 Wireless signals are affected by:
+
 - Distance from the access point
 - Physical obstacles (walls, furniture)
 - Interference from other devices
@@ -123,9 +123,14 @@ Wireless signals are affected by:
 ## Next Steps in Our Journey
 
 Now that we've explored wireless networking, in the next chapter we'll follow our packet's global journey. We'll learn about:
+
 - How packets are routed globally
 - Traceroute and packet tracing
 - Routing between gateways
 - Handling network congestion
 
 Until then, stay connected! Remember, every wireless signal tells a story.
+
+# End of Chapter
+
+<Spliter />
