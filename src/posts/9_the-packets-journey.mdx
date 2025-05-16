@@ -1,0 +1,132 @@
+---
+title: '9: The Packet's Journey'
+published: true
+description: "Follow our packet's global adventure. We'll explore global routing, traceroute, gateway communication, and network congestion in this chapter of our networking adventure."
+tags: ['Networking', 'Global Routing', 'Traceroute', 'Gateways', 'Congestion']
+date: 'May 16 2025'
+thumbnail: 'thumbnails/part-9.jpeg'
+order: 9
+---
+
+import Spliter from '../components/svelte/Spliter.svelte';
+import Begin from '../components/svelte/Begin.svelte';
+import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+
+<Begin />
+
+# The Global Adventure
+
+Welcome back, global explorer! 🌍
+
+Our packet has navigated local networks and wireless connections, but now it's time for its greatest challenge: the global journey across the internet. This is where the true magic of networking comes to life.
+
+In this chapter, we'll explore:
+- How packets are routed globally
+- Using traceroute to follow the path
+- Communication between gateways
+- Handling network congestion
+
+<SingleQuestion
+  client:load
+  label="What is the primary purpose of global routing?"
+  choices={[
+    'To connect devices within a local network',
+    'To find the best path between networks worldwide',
+    'To manage wireless connections',
+    'To encrypt internet traffic',
+  ]}
+/>
+<Spliter />
+
+## Global Routing: The Internet's Map
+
+Global routing is like a complex web of highways:
+
+- Autonomous Systems (AS) exchange routing information
+- BGP (Border Gateway Protocol) is the main protocol
+- Routes are chosen based on policies and metrics
+- Redundancy ensures reliability
+
+<SingleQuestion
+  client:load
+  label="Which protocol is primarily used for global routing between ASes?"
+  choices={[
+    'OSPF',
+    'BGP',
+    'RIP',
+    'EIGRP',
+  ]}
+  correct={1}
+  explanation="BGP (Border Gateway Protocol) is the primary protocol used for routing between Autonomous Systems (ASes) on the internet."
+/>
+
+<Spliter />
+
+## Traceroute: Following the Path
+
+Traceroute is like a magical map that shows our packet's journey:
+
+- Shows each hop along the route
+- Measures latency at each point
+- Helps diagnose network issues
+- Uses TTL (Time to Live) field in packets
+
+<SingleQuestion
+  client:load
+  label="What does TTL stand for in networking?"
+  choices={[
+    'Time to Live',
+    'Total Transmission Latency',
+    'Transit Time Limit',
+    'Time to Load',
+  ]}
+  correct={0}
+  explanation="TTL stands for Time to Live, which limits the lifespan of a packet to prevent infinite loops in the network."
+/>
+
+<Spliter />
+
+## Gateway Communication: The Network Diplomats
+
+Gateways are like diplomats between networks:
+
+- Translate between different protocols
+- Manage traffic between networks
+- Implement security policies
+- Handle address translation
+
+<Spliter />
+
+## Network Congestion: The Traffic Jams
+
+Network congestion is like rush hour traffic:
+
+- Occurs when too much data tries to use the same path
+- Can cause packet loss and delays
+- Managed through congestion control algorithms
+- Quality of Service (QoS) helps prioritize traffic
+
+<SingleQuestion
+  client:load
+  label="Which technique helps manage network congestion?"
+  choices={[
+    'Increasing packet size',
+    'Implementing Quality of Service (QoS)',
+    'Disabling firewalls',
+    'Reducing the number of routers',
+  ]}
+  correct={1}
+  explanation="Quality of Service (QoS) helps manage network congestion by prioritizing certain types of traffic."
+/>
+
+<Spliter />
+
+## Next Steps in Our Journey
+
+Now that we've followed our packet's global journey, in the next chapter we'll explore the world of IP addressing. We'll learn about:
+- IPv4 vs IPv6
+- CIDR notation
+- Public vs private IP addresses
+- IP address allocation
+
+Until then, keep exploring! Remember, every packet's journey is a global adventure.
