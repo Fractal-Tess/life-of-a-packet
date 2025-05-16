@@ -1,3 +1,4 @@
+import { ChartColumnDecreasing } from '@lucide/svelte';
 import { getContext, setContext } from 'svelte';
 export class Driver {
   progress = $state(0);
@@ -7,7 +8,6 @@ export class Driver {
   finished = $state(false);
 
   constructor() {
-    // Initialize the length by finding prose elements
     this.init();
     this.setProgress(0);
   }
@@ -18,19 +18,19 @@ export class Driver {
   }
 
   private onProgressChange() {
+    // Show and enable the current section
     const section = this.sections[this.progress];
     if (!section || section.length === 0) return;
     for (const element of section) {
+      element.classList.remove('opacity-0');
       element.classList.add('!opacity-100');
-      element.classList.remove('!opacity-0');
       element.classList.add('!pointer-events-auto');
-      element.classList.remove('!pointer-events-none');
+      element.classList.remove('pointer-events-none');
+      element.classList.remove('[&>*]:opacity-0');
     }
+    // Reset canContinue for each new section
+    this.canContinue = false;
     this.scrollTo(this.progress);
-    if (this.progress === this.sections.length - 1) {
-      this.finished = true;
-      console.log('finished');
-    }
   }
 
   private init() {
@@ -72,10 +72,15 @@ export class Driver {
           currentSection = [];
         } else {
           // Add the child to the current section
+          if (child.tagName.toLowerCase() === 'astro-island') {
+            child.classList.add('[&>*]:opacity-0');
+          }
+          child.classList.add('[&>*]:opacity-0');
           currentSection.push(child as HTMLElement);
         }
       }
     }
+    console.log(this.sections);
   }
 
   public reset() {
@@ -93,6 +98,10 @@ export class Driver {
     const rect = topElement.getBoundingClientRect();
     const scrollTop = window.scrollY + rect.top - padding;
     window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+  }
+
+  public unblock() {
+    this.canContinue = true;
   }
 }
 

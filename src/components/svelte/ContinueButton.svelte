@@ -11,7 +11,7 @@
     class="fixed bottom-8 left-1/2 -translate-x-1/2 px-8 py-3 {driver.finished
       ? 'bg-gray-400 cursor-default'
       : 'bg-accent cursor-pointer hover:scale-105'} text-white rounded-full shadow-lg w-60 transition z-50"
-    on:click={() => !driver.finished && driver.next()}
+    onclick={() => !driver.finished && driver.next()}
   >
     {driver.finished ? 'Finished' : 'Continue'}
   </button>

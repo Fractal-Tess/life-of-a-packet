@@ -96,7 +96,7 @@
         class:bg-error-subtle={isAnswerCorrect &&
           selectedAnswer === i &&
           i !== correctAnswerIdx}
-        on:click={() => selectAnswer(i)}
+        onclick={() => selectAnswer(i)}
         disabled={hasCheckedAnswer && isAnswerCorrect}
       >
         <span class="block">{choice}</span>
@@ -109,7 +109,7 @@
     <button
       class="w-full sm:w-auto px-6 py-3 bg-brand text-white border-none rounded-md cursor-pointer transition-all duration-200 ease-in-out hover:bg-brand-hover disabled:opacity-50 disabled:cursor-not-allowed"
       class:shake={shouldShake}
-      on:click={checkAnswer}
+      onclick={checkAnswer}
       disabled={selectedAnswer === null ||
         (hasCheckedAnswer && isAnswerCorrect)}
     >
@@ -118,7 +118,7 @@
     {#if hasCheckedAnswer && isAnswerCorrect}
       <button
         class="w-full sm:w-auto px-6 py-3 bg-transparent text-text-2 border border-surface-3 rounded-md cursor-pointer transition-all duration-200 ease-in-out hover:bg-surface-2 hover:text-text-1"
-        on:click={() => (showExplanation = !showExplanation)}
+        onclick={() => (showExplanation = !showExplanation)}
       >
         {showExplanation ? 'Hide Explanation' : 'Show Explanation'}
       </button>
