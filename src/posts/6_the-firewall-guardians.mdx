@@ -1,0 +1,136 @@
+---
+title: '6: The Firewall Guardians'
+published: true
+description: "Discover how firewalls protect networks. We'll explore Network Address Translation (NAT), stateful inspection, and common network threats in this chapter of our networking adventure."
+tags: ['Networking', 'Firewalls', 'NAT', 'Security', 'Threats']
+date: 'May 16 2025'
+thumbnail: 'thumbnails/part-6.jpeg'
+order: 6
+---
+
+import Spliter from '../components/svelte/Spliter.svelte';
+import Begin from '../components/svelte/Begin.svelte';
+import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+
+<Begin />
+
+# The Network Guardians
+
+Welcome back, security explorer! 🛡️
+
+Our packet has navigated routers and protocols, but now it must pass through the vigilant guardians of network security: firewalls. These digital sentinels protect networks from threats while enabling safe communication.
+
+In this chapter, we'll explore:
+- How firewalls work and their role in networking
+- Network Address Translation (NAT)
+- Stateful vs stateless inspection
+- Common network threats and protections
+
+<SingleQuestion
+  client:load
+  label="What is the primary purpose of a firewall?"
+  choices={[
+    'To speed up network traffic',
+    'To monitor and control incoming and outgoing network traffic',
+    'To convert IP addresses to domain names',
+    'To manage wireless connections',
+  ]}
+/>
+<Spliter />
+
+## Firewalls: The Network Sentinels
+
+Firewalls are like the gatekeepers of a castle, deciding who can enter and leave. They:
+
+- Examine incoming and outgoing traffic
+- Enforce security policies
+- Can be hardware or software-based
+- Operate at multiple OSI layers
+
+<SingleQuestion
+  client:load
+  label="Which of these is NOT a type of firewall?"
+  choices={[
+    'Packet-filtering firewall',
+    'Stateful inspection firewall',
+    'Proxy firewall',
+    'DNS firewall',
+  ]}
+  correct={3}
+  explanation="While there are DNS security solutions, 'DNS firewall' is not a standard type of firewall classification."
+/>
+
+<Spliter />
+
+## Network Address Translation (NAT): The Masking Spell
+
+NAT is like a magical disguise for devices on a network. It:
+
+- Allows multiple devices to share a single public IP
+- Hides internal IP addresses from the internet
+- Helps conserve IPv4 addresses
+- Can be static, dynamic, or PAT (Port Address Translation)
+
+<SingleQuestion
+  client:load
+  label="What is the primary benefit of NAT?"
+  choices={[
+    'It increases network speed',
+    'It allows multiple devices to share a single public IP',
+    'It encrypts network traffic',
+    'It improves wireless signal strength',
+  ]}
+  correct={1}
+  explanation="NAT's primary benefit is allowing multiple devices to share a single public IP address, conserving IPv4 addresses."
+/>
+
+<Spliter />
+
+## Stateful vs Stateless Inspection
+
+Firewalls can inspect traffic in different ways:
+
+**Stateful Inspection:**
+- Tracks the state of network connections
+- Remembers previous packets in a session
+- More secure but resource-intensive
+
+**Stateless Inspection:**
+- Examines each packet independently
+- Faster but less secure
+- Simpler to implement
+
+<SingleQuestion
+  client:load
+  label="Which type of firewall inspection tracks the state of network connections?"
+  choices={[
+    'Stateless inspection',
+    'Stateful inspection',
+    'Both track connection states',
+    'Neither tracks connection states',
+  ]}
+  correct={1}
+  explanation="Stateful inspection firewalls track the state of network connections, making them more secure but more resource-intensive."
+/>
+
+<Spliter />
+
+## Common Network Threats
+
+Our packet must beware of these digital dangers:
+- Malware and viruses
+- Denial of Service (DoS) attacks
+- Phishing attempts
+- Man-in-the-middle attacks
+
+<Spliter />
+
+## Next Steps in Our Journey
+
+Now that our packet has passed through the firewall guardians, in the next chapter we'll explore the internet's backbone. We'll learn about:
+- Internet Service Providers
+- Undersea fiber optic cables
+- Internet exchange points
+- Global network infrastructure
+
+Until then, stay secure! Remember, every packet's journey is protected by vigilant guardians.
