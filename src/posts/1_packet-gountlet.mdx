@@ -53,6 +53,7 @@ You've seen these coordinates before... right? I mean, you must have, but in cas
 - 81.161.240.3
 
 <SingleQuestion
+  client:load
   label="What is an IP address used for in networking?"
   choices={[
     "To identify a device's physical location",
@@ -87,6 +88,7 @@ Think of DNS lookup as asking a series of increasingly knowledgeable sages for d
 <Spliter />
 
 <SingleQuestion
+  client:load
   label="What is the main purpose of DNS in the context of the internet?"
   choices={[
     'To translate domain names to IP addresses',
@@ -111,3 +113,5 @@ Now, the Recursive Resolver starts _its_ journey (this is the fun part!):
 8.  **Passing the Map (OS to Browser):** The OS gives the precious IP address to the browser.
 
 _Phew!_ That was quite the consultation! This entire recursive process usually happens in milliseconds.
+
+<Spliter />
