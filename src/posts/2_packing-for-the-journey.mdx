@@ -1,0 +1,111 @@
+---
+title: '2: Packing for the Journey'
+published: true
+description: "Discover how data packets are prepared for their journey through the network. We'll explore packet structure, headers, and the OSI model in this chapter of our networking adventure."
+tags: ['Networking', 'Packets', 'OSI Model', 'Protocols', 'Data Transmission']
+date: 'May 16 2025'
+thumbnail: 'thumbnails/part-2.jpeg'
+order: 2
+---
+
+import Spliter from '../components/svelte/Spliter.svelte';
+import Begin from '../components/svelte/Begin.svelte';
+import SingleQuestion from '../components/svelte/questions/SingleQuestion.svelte';
+
+<Begin />
+
+# Preparing for the Adventure
+
+Welcome back, intrepid explorer! 🎒
+
+Now that we have our destination's IP address, it's time to prepare our packet for its journey. Just like you wouldn't start a quest without packing the right gear, data needs to be properly prepared before it can travel through the network.
+
+In this chapter, we'll explore:
+- What data packets are and how they're structured
+- The different layers of the OSI model
+- How information is encapsulated for transmission
+- The role of protocol headers
+
+<SingleQuestion
+  client:load
+  label="What is the primary purpose of packet headers?"
+  choices={[
+    'To store the actual data being transmitted',
+    'To provide routing and delivery information',
+    'To encrypt the packet contents',
+    'To compress the data for faster transmission',
+  ]}
+/>
+<Spliter />
+
+## The Anatomy of a Packet
+
+Imagine our data as a traveler preparing for a journey. Just like a traveler needs a passport, luggage tags, and travel documents, our data needs specific information to navigate the network successfully.
+
+A typical data packet consists of:
+1. **Header:** Contains control information (like source/destination addresses)
+2. **Payload:** The actual data being transmitted
+3. **Trailer:** Contains error-checking information
+
+<SingleQuestion
+  client:load
+  label="Which part of the packet contains the actual data being transmitted?"
+  choices={[
+    'Header',
+    'Payload',
+    'Trailer',
+    'All of the above',
+  ]}
+  correct={1}
+  explanation="The payload contains the actual data being transmitted, while the header and trailer contain control and error-checking information."
+/>
+
+<Spliter />
+
+## The OSI Model: The Seven-Layered Journey
+
+The Open Systems Interconnection (OSI) model is like a seven-layered castle that our packet must navigate. Each layer adds its own special "magic" to prepare the packet for its journey:
+
+1. **Physical Layer:** The actual cables and wireless signals
+2. **Data Link Layer:** Handles local network delivery
+3. **Network Layer:** Manages routing between devices
+4. **Transport Layer:** Ensures reliable delivery
+5. **Session Layer:** Manages connections
+6. **Presentation Layer:** Handles data formatting
+7. **Application Layer:** Where user applications live
+
+<SingleQuestion
+  client:load
+  label="Which OSI layer is responsible for routing between devices?"
+  choices={[
+    'Physical Layer',
+    'Data Link Layer',
+    'Network Layer',
+    'Transport Layer',
+  ]}
+  correct={2}
+  explanation="The Network Layer (Layer 3) is responsible for routing packets between different devices on the network."
+/>
+
+<Spliter />
+
+## Encapsulation: Packing the Packet
+
+As our data moves down the OSI model, each layer adds its own header, like putting a letter in progressively larger envelopes:
+
+1. Application data starts at the top
+2. Each layer adds its own header
+3. Physical layer transmits the final packet
+
+This process is called **encapsulation** - think of it as Russian nesting dolls for data!
+
+<Spliter />
+
+## Next Steps in Our Journey
+
+Now that our packet is properly packed and ready for its journey, in the next chapter we'll explore how it navigates the local network. We'll learn about:
+- MAC addresses and their role
+- Ethernet and Wi-Fi basics
+- The ARP protocol
+
+Until then, happy networking! Remember, every packet tells a story.
